@@ -9,9 +9,9 @@ def index(request):
 def checkIfAttendanceMarked(request):
     jsonVar = json.loads(request.body)
 
-    print "request data : ", jsonVar
+    print ("request data : ", jsonVar)
     returnVar = checkIfAttendanceMarkedService(jsonVar)
-    print "response data : ", returnVar
+    print ("response data : ", returnVar)
 
     if not returnVar['result']:
         return HttpResponse(json.dumps(returnVar), status=500, content_type='application/json')
@@ -21,11 +21,11 @@ def checkIfAttendanceMarked(request):
 def register(request):
     jsonVar = json.loads(request.body)
 
-    print "request data : ", jsonVar
+    print ("request data : ", jsonVar)
     returnVar = registerStudentService(jsonVar)
-    print "response data : ", returnVar
+    print ("response data : ", returnVar)
 
-    print returnVar
+    print (returnVar)
     if not returnVar['result']:
         return HttpResponse(json.dumps(returnVar), status=500, content_type='application/json')
     else:
@@ -35,9 +35,9 @@ def register(request):
 def markAttendance(request):
     jsonVar = json.loads(request.body)
 
-    print "request data : ", jsonVar
+    print ("request data : ", jsonVar)
     returnVar = markAttendanceService(jsonVar)
-    print "response data : ", returnVar
+    print ("response data : ", returnVar)
 
     if not returnVar['result']:
         return HttpResponse(json.dumps(returnVar), status=403, content_type='application/json')
@@ -47,7 +47,7 @@ def markAttendance(request):
 
 def getClassDetails(request):
     returnVar = getClassDetailsService()
-    print "response data : ", returnVar
+    print ("response data : ", returnVar)
 
     if not returnVar['result']:
         return HttpResponse(json.dumps(returnVar), status=403, content_type='application/json')

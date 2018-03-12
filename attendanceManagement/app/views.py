@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from models import AttendanceDetails,StudentDetails,ProfessorDetails
+from .models import AttendanceDetails,StudentDetails,ProfessorDetails
 from django.conf import settings
 from django.core.mail import send_mail
 import datetime
@@ -32,6 +32,7 @@ def loginform(request):
 
          obj=ProfessorDetails.objects.filter(professorId=userid)
          for o in obj:
+             print(o.password)
              if o.password == passwd:
                 return redirect('/app/dashboards') 
 
