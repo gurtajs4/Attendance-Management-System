@@ -26,9 +26,10 @@ SECRET_KEY = '-qef77b=_$j0^&t&*udto5f^9$80!6koq-0%f(e8yrigvvpkuq'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'f1aba23f.ngrok.io',
-    'de14c93f.ngrok.io',
-    '127.0.0.1'
+    #'f1aba23f.ngrok.io',
+    #'de14c93f.ngrok.io',
+    #'127.0.0.1'
+    '192.168.1.6'
 ]
 
 
@@ -92,6 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'masterDb',
         'USER': 'root',
+        'PASSWORD': 'l',
         'HOST': 'localhost',
         'PORT': '3306',
     }

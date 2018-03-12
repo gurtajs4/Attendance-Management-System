@@ -1,4 +1,4 @@
-from models import *
+#from models import *
 from datetime import datetime, date
 
 def checkIfAttendanceMarkedService(jsonVar):
@@ -8,7 +8,7 @@ def checkIfAttendanceMarkedService(jsonVar):
         classIdVar = jsonVar['classId']
         attendanceStatusVar = 'Marked'
         returnVar = {}
-        print date.today()
+        print (date.today())
         if AttendanceDetails.objects.filter(date__contains=datetime.now().date(),
                                          attendanceStatus=attendanceStatusVar,
                                          studentMacAddress__iexact=studentMacAddressVar,
@@ -29,7 +29,7 @@ def checkIfAttendanceMarkedService(jsonVar):
         returnVar['message'] = ex.message
         returnVar['result'] = False
 
-        print ex
+        print (ex)
         return returnVar
 
 
@@ -71,7 +71,7 @@ def registerStudentService(jsonVar):
         returnVar['message'] = ex.message
         returnVar['result'] = False
 
-        print ex
+        print (ex)
         return returnVar
 
 
@@ -83,7 +83,7 @@ def markAttendanceService(jsonVar):
         raspPieMacAddressVar = jsonVar['raspPieMacAddress']
         attendanceStatusVar = 'Marked'
         classIdVar = jsonVar['classId']
-        print "classIdVar : ", classIdVar
+        print ("classIdVar : ", classIdVar)
         returnVar = {}
 
         if AttendanceDetails.objects.filter(date__contains=datetime.now().date(),
@@ -108,7 +108,7 @@ def markAttendanceService(jsonVar):
         returnVar['message'] = ex.message
         returnVar['result'] = False
 
-        print ex
+        print (ex)
         return returnVar
 
 def getClassDetailsService():
@@ -154,5 +154,5 @@ def getClassDetailsService():
         returnVar['message'] = ex.message
         returnVar['result'] = False
 
-        print ex
+        print (ex)
         return returnVar
