@@ -44,13 +44,13 @@ keypass android
 3. Run:
     `python ./server.py`
     
+#Run Keytool to generate SHA1 for Firebase
+#Keytool location C:\Program Files\Android\Android Studio\jre\bin
+
+keytool -list -v -keystore C:\Users\h137330\.android\debug.keystore  -alias androiddebugkey -storepass android -keypass android
 
 ## License:
 
 This project is released under the [MIT License](https://github.com/siddharth-daftari/Attendance-Management-System/blob/master/LICENSE.txt).
 
-#Run Keytool to generate SHA1 for Firebase
-#Keytool location C:\Program Files\Android\Android Studio\jre\bin
-
-keytool -list -v -keystore C:\Users\h137330\.android\debug.keystore  -alias androiddebugkey -storepass android -keypass android
   
